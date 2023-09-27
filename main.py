@@ -31,9 +31,10 @@ def serve():
     recommendations_pb2_grpc.add_recommendationSystemServicer_to_server(
         RecommendationSystemService(), server)
 
-    server.add_secure_port('localhost:50051', get_sert_keys())
+#     server.add_secure_port('exchangerecommendation:50051', get_sert_keys())
+    server.add_insecure_port('exchangerecommendation:50051')
     server.start()
-    print("Server started on port 50051")
+    print("Server started on port exchangerecommendationЖ50051")
     server.wait_for_termination()
 
 
